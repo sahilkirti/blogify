@@ -9,7 +9,7 @@ export const Blog = () => {
     const { loading, blog } = useBlog({
         id: Number(id) || 0,
     });
-    if(loading) {
+    if(loading || !blog) {
         return (
         <div>
             <Appbar/>
