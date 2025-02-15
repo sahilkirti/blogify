@@ -2,7 +2,7 @@ import {Hono} from 'hono';
 import { sign } from 'hono/jwt';
 import { PrismaClient } from '@prisma/client/edge';
 import { withAccelerate } from '@prisma/extension-accelerate';
-import { signinInput, signupInput, SignupInput } from '@sahilkirti/medium-blog';
+import { signinInput, signupInput } from '@sahilkirti/medium-blog';
 
 export const userRouter = new Hono<{
     Bindings: {
@@ -19,7 +19,7 @@ userRouter.post('/signup', async (c) => {
         return c.json({
             message:"Invalid Input"
         })
-    }
+    } 
     const prisma = new PrismaClient({
         datasourceUrl: c.env.DATABASE_URL,
     }).$extends(withAccelerate());

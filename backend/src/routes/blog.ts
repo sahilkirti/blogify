@@ -80,12 +80,10 @@ blogRouter.put('/', async (c) => {
           content: body.content
         }
     })
-
     return c.json({
       id: blog.id
     })
 })
-
 //pagination------------------------
 blogRouter.get('/bulk', async (c) => {
     const prisma = new PrismaClient({
