@@ -9,14 +9,13 @@ export const Publish = () => {
     const [description,setDescription] = useState("");
     const navigate = useNavigate()
     return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center">
         <Appbar />
-        <div className="flex justify-center pt-10 ">
-            <div className="max-w-2xl w-full bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">Create Post</h2>
+        <div className="mt-10 w-full max-w-3xl bg-white p-8 rounded-xl shadow-lg">     
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Create Post</h2>
                 <input onChange={(e) => {
                     setTitle(e.target.value)
-                }} type="text" className="w-full bg-gray-50 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 " placeholder="Title"/>
+                }} type="text" className="w-full bg-gray-100 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2 mb-4 outline-none " placeholder="Title"/>
                 <TextEditor onChange={(e) => {
                     setDescription(e.target.value)
                 }}/>
@@ -30,24 +29,16 @@ export const Publish = () => {
                         }
                     });
                     navigate(`/blog/${response.data.id}`)
-                }} type ="submit" className="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-900 hover:bg-blue-800">Publish Post</button>
-
-            </div>
+                }} type ="submit" className="mt-6 w-full text-lg font-medium px-5 py-2 text-white bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-blue-900 focus:ring-4 focus:ring-blue-300">Publish Post</button>         
         </div>
     </div>
     )
 }
 function TextEditor ({onChange}: {onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void}) {
     return (
-        <div className="mt-2">
-            <div className="w-full mb-2">
-                <div className="flex items-center justify-between border">
-                    <div className="my-2 bg-white rounded-b-lg w-full">
-                        <label className="sr-only">Publish post</label>
-                        <textarea onChange={onChange} id="editor" rows={8} className="focus:outline-none block w-full test-sm text-gray-800 bg-white border-0 pl-2" placeholder="write an aritcle..." required/>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div className="w-full">
+        <label className="text-gray-700 font-medium block mb-2">Publish post</label>
+        <textarea onChange={onChange} id="editor" rows={8} className="w-full bg-gray-100 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-4 outline-none resize-none" placeholder="write an aritcle..." required/>
+    </div>        
     )
 }
