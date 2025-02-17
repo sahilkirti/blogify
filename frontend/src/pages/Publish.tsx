@@ -9,10 +9,11 @@ export const Publish = () => {
     const [description,setDescription] = useState("");
     const navigate = useNavigate()
     return (
-    <div>
+    <div className="min-h-screen bg-gray-50">
         <Appbar />
-        <div className="flex justify-center w-full pt-8 ">
-            <div className="max-w-screen-lg w-full">
+        <div className="flex justify-center pt-10 ">
+            <div className="max-w-2xl w-full bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">Create Post</h2>
                 <input onChange={(e) => {
                     setTitle(e.target.value)
                 }} type="text" className="w-full bg-gray-50 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 " placeholder="Title"/>
@@ -48,6 +49,5 @@ function TextEditor ({onChange}: {onChange: (e: ChangeEvent<HTMLTextAreaElement>
                 </div>
             </div>
         </div>
-        
     )
 }
