@@ -10,7 +10,7 @@ export const Appbar = () => {
       <Link to={'/'} className="text-3xl font-bold text-gray-900 font-sans tracking-tight hover:text-gray-700 transition"> BLOGIFY </Link>
       {isHomePage ? (
         <div className="flex items-center space-x-6">
-          <Link to="/signin"><button type="button" className="text-sm font-medium text-gray-700 hover:text-gray-900 transition"> Singn In </button> </Link>
+          <Link to="/signin"><button type="button" className="text-sm font-medium text-gray-700 hover:text-gray-900 transition"> Sign In </button> </Link>
           <Link to="/signup"> <button type="button" className="text-sm font-medium text-white bg-green-600 hover:bg-green-700 px-6 py-2.5 rounded-full transition shadow-md"> Get Started </button> </Link>
         </div>
       ) : (
