@@ -1,9 +1,9 @@
-# BLOGIFY Blogging Platform
+# BLOGIFY Blogging Platform 
 A full-stack blogging platform inspired by Medium, built with modern technologies. This project includes a **backend** built with **Hono**, **Prisma**, and **Cloudflare Workers**, and a **frontend** built with **React** and **Tailwind CSS**. It supports user authentication, blog creation, updating, and fetching blogs with pagination.
 
 ---
 
-## **Features**
+## **Features** :
 
 ### **Frontend**
 1. **User Authentication**:
