@@ -81,34 +81,34 @@ A complete Medium-inspired blogging platform with modern architecture:
 ## **File Structure**
 
 ### **Frontend**
-frontend/
-├── src/
-│ ├── components/ # Reusable components (e.g., Auth, Quote)
-│ ├── pages/ # Page components (e.g., Signup, Signin, Blogs)
-│ ├── App.tsx # Main app component with routing
-│ ├── index.tsx # Entry point for the React app
-│ └── ... # Other files (e.g., styles, utilities)
-├── package.json # Dependencies and scripts
-└── README.md # Project documentation
+   frontend/
+   ├── src/
+   │ ├── components/ # Reusable components (e.g., Auth, Quote)
+   │ ├── pages/ # Page components (e.g., Signup, Signin, Blogs)
+   │ ├── App.tsx # Main app component with routing
+   │ ├── index.tsx # Entry point for the React app
+   │ └── ... # Other files (e.g., styles, utilities)
+   ├── package.json # Dependencies and scripts
+   └── README.md # Project documentation
 
 ### **Backend**
-backend/
-├── src/
-│ ├── routes/ # Route handlers (e.g., user, blog)
-│ ├── index.ts # Main entry point for the backend
-│ └── schema.prisma # Prisma schema for database models
-├── package.json # Node.js dependencies and scripts
-├── tsconfig.json # TypeScript configuration
-└── README.md # Project documentation
+   backend/
+   ├── src/
+   │ ├── routes/ # Route handlers (e.g., user, blog)
+   │ ├── index.ts # Main entry point for the backend
+   │ └── schema.prisma # Prisma schema for database models
+   ├── package.json # Node.js dependencies and scripts
+   ├── tsconfig.json # TypeScript configuration
+   └── README.md # Project documentation
 
 
 ### **Common**
-common/
-├── src/
-│ ├── index.ts # Zod schemas and types
-├── package.json # Dependencies for the common module
-└── README.md # Documentation for the common module
-
+   common/
+   ├── src/
+   │ ├── index.ts # Zod schemas and types
+   ├── package.json # Dependencies for the common module
+   └── README.md # Documentation for the common module
+   
 
 ---
 
