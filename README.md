@@ -1,12 +1,18 @@
-# BLOGIFY Blogging Platform 
+# Blogify - Full-Stack Blogging Platform
 
 [![Frontend](https://img.shields.io/badge/frontend-react-%2361DAFB.svg?logo=react)](https://reactjs.org/)
 [![Backend](https://img.shields.io/badge/backend-hono-%2343853D.svg?logo=hono)](https://hono.dev/)
 [![Deployment](https://img.shields.io/badge/deployed-vercel/cloudflare-%23F38020.svg?logo=cloudflare)](https://blogify-git-main-sahilkirtis-projects.vercel.app/)
 
-A full-stack blogging platform inspired by Medium, built with modern technologies. This project includes a **backend** built with **Hono**, **Prisma**, and **Cloudflare Workers**, and a **frontend** built with **React** and **Tailwind CSS**. It supports user authentication, blog creation, updating, and fetching blogs with pagination.
+A complete Medium-inspired blogging platform with modern architecture:
 
----
+- **Frontend**: React + Vite + Tailwind CSS
+- **Backend**: Hono + Cloudflare Workers
+- **Database**: PostgreSQL + Prisma ORM
+
+🌐 **Live Demo**: [https://blogify-git-main-sahilkirtis-projects.vercel.app/](https://blogify-git-main-sahilkirtis-projects.vercel.app/)
+
+![Blogify Screenshot](./screenshot.png)
 
 ## **Features** :
 
