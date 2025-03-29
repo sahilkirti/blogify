@@ -3,6 +3,6 @@ main = "src/index.ts"
 compatibility_date ="2025-02-08"
 
 [vars]
-DATABASE_URL="$DATABASE_URL",
+DATABASE_URL="$DATABASE_URL"
 JWT_SECRET="$JWT_SECRET"
 
