@@ -243,26 +243,7 @@ Ensure the backend URL is updated correctly:
 export const BACKEND_URL = "your_backend_url";
 ```
 
-### ⚡ 2️⃣ Configure Frontend Environment
-```sh
-cp frontend/.env.example frontend/.env
-```
-**Update `frontend/.env`** and set:
-```env
-VITE_BACKEND_URL=your_backend_url
-```
-
-### ⚡ 3️⃣ Configure Backend Environment
-```sh
-cp backend/.env.example backend/.env
-```
-**Update `backend/.env`** and set:
-```env
-DATABASE_URL=your_database_url
-JWT_SECRET=your_jwt_secret
-```
-
-### ⚡ 4️⃣ Update Backend Configuration (`backend/src/wrangler.toml`)
+### ⚡ 2️⃣ Update Backend Configuration (`backend/src/wrangler.toml`)
 Ensure the following keys are updated:
 ```toml
 database_url = "your_database_url"
