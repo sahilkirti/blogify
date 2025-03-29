@@ -216,5 +216,81 @@ A complete Medium-inspired blogging platform with modern architecture:
      }
      ```
 
+## 📌 Prerequisites
+Ensure you have the following installed before proceeding:
+- **✅ Node.js (>=18.x)**
+- **✅ PostgreSQL (>=15)**
+- **✅ Git**
 
+## 📥 Installation
+
+### 🔹 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/sahilkirti/blogify.git
+cd blogify
+```
+
+### 🔹 2️⃣ Install Dependencies
+```sh
+npm run setup
+```
+
+## 🔧 Environment Setup
+
+### ⚡ 1️⃣ Update Frontend Configuration (`frontend/src/config.ts`)
+Ensure the backend URL is updated correctly:
+```ts
+export const BACKEND_URL = "your_backend_url";
+```
+
+### ⚡ 2️⃣ Configure Frontend Environment
+```sh
+cp frontend/.env.example frontend/.env
+```
+**Update `frontend/.env`** and set:
+```env
+VITE_BACKEND_URL=your_backend_url
+```
+
+### ⚡ 3️⃣ Configure Backend Environment
+```sh
+cp backend/.env.example backend/.env
+```
+**Update `backend/.env`** and set:
+```env
+DATABASE_URL=your_database_url
+JWT_SECRET=your_jwt_secret
+```
+
+### ⚡ 4️⃣ Update Backend Configuration (`backend/src/wrangler.toml`)
+Ensure the following keys are updated:
+```toml
+database_url = "your_database_url"
+jwt_secret = "your_jwt_secret"
+```
+
+## 🚀 Running Locally
+
+### 🔥 1️⃣ Start the Backend
+```sh
+cd backend
+npx prisma migrate dev --name init
+npm run dev
+```
+
+### 🔥 2️⃣ Start the Frontend (in a separate terminal)
+```sh
+cd frontend
+npm run dev
+```
+
+## ☁️ Deploying Backend on Cloudflare
+```sh
+cd backend
+npm install -g wrangler
+wrangler login
+wrangler publish
+```
+---
+✨ **Developed by Sahil Kirti** ✨
 
