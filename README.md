@@ -12,7 +12,6 @@ A complete Medium-inspired blogging platform with modern architecture:
 
 🌐 **Live Demo**: [https://blogify-git-main-sahilkirtis-projects.vercel.app/](https://blogify-git-main-sahilkirtis-projects.vercel.app/)
 
-![Blogify Screenshot](./screenshot.png)
 
 ## **Features** :
 
@@ -217,13 +216,5 @@ common/
      }
      ```
 
----
 
-## **Setup Instructions**
-
-### **Frontend**
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/your-username/your-repo.git
-   cd your-repo/frontend
 
