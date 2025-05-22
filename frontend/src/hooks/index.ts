@@ -34,7 +34,7 @@ export const useBlog = ({id}:{id:Number}) => {
 export const useBlogs = () => {
     const [loading, setLoading] = useState(true);
     const [blogs, setBlogs] = useState<Blog[]>([]);
-    const intervalRef = useRef<NodeJS.Timeout | null>(null);
+    const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   
     useEffect(() => {
       const fetchBlogs = async () => {
