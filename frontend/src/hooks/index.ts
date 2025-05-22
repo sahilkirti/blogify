@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import {BACKEND_URL} from '../config'
 
 export interface Blog{
@@ -34,29 +34,59 @@ export const useBlog = ({id}:{id:Number}) => {
 export const useBlogs = () => {
     const [loading, setLoading] = useState(true);
     const [blogs, setBlogs] = useState<Blog[]>([]);
-
+    const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  
     useEffect(() => {
-        const fetchBlogs = async () => {
-            try {
-                const response = await axios.get(`${BACKEND_URL}/api/v1/blog/bulk`, {
-                    headers: {
-                        Authorization: localStorage.getItem('token'),
-                    },
-                });
-                setBlogs(response.data.blogs);
-                setLoading(false);
-            } catch (error) {
-                console.error("Failed to fetch blogs:", error);
+      const fetchBlogs = async () => {
+        try {
+          const response = await axios.get(`${BACKEND_URL}/api/v1/blog/bulk`, {
+            headers: {
+              Authorization: localStorage.getItem('token'),
+            },
+          });
+          setBlogs(response.data.blogs);
+          setLoading(false);
+        } catch (error) {
+          console.error("Failed to fetch blogs:", error);
+        }
+      };
+  
+      fetchBlogs(); 
+  
+      const startPolling = () => {
+        if (!intervalRef.current) {
+          intervalRef.current = setInterval(() => {
+            if (document.visibilityState === "visible") {
+              fetchBlogs();
             }
-        };
-
-        fetchBlogs(); 
-        const interval = setInterval(fetchBlogs, 5000);
-        return () => clearInterval(interval); 
+          }, 5000);
+        }
+      };
+  
+      const stopPolling = () => {
+        if (intervalRef.current) {
+          clearInterval(intervalRef.current);
+          intervalRef.current = null;
+        }
+      };
+  
+      startPolling();
+      const handleVisibilityChange = () => {
+        if (document.visibilityState === "hidden") {
+          stopPolling();
+        } else {
+          startPolling();
+        }
+      };
+      document.addEventListener("visibilitychange", handleVisibilityChange);
+      return () => {
+        stopPolling();
+        document.removeEventListener("visibilitychange", handleVisibilityChange);
+      };
     }, []);
-
+  
     return {
-        loading,
-        blogs,
+      loading,
+      blogs,
     };
-};
+  };
